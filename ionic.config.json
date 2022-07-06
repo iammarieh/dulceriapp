@@ -1,0 +1,7 @@
+{
+  "name": "dulceriapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
