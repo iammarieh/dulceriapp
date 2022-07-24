@@ -34,6 +34,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/eventos',
     component: () => import ('../views/EventosPage.vue')
   },
+  {
+    path: '/galeria',
+    component: () => import ('../views/GaleriaPage.vue')
+  },
 ]
 
 const router = createRouter({
