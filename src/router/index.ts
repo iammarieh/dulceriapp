@@ -38,6 +38,14 @@ const routes: Array<RouteRecordRaw> = [
     path: '/galeria',
     component: () => import ('../views/GaleriaPage.vue')
   },
+  {
+    path: '/noticias',
+    component: () => import ('../views/NoticiasPage.vue')
+  },
+  {
+    path: '/inicio',
+    component: () => import ('../views/InicioPage.vue')
+  },
 ]
 
 const router = createRouter({
