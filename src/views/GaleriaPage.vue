@@ -93,28 +93,28 @@ export default defineComponent({
       galeria: [
         {
           id: 1,
-          image: "/assets/img/img1.jpg",
+          image: "/assets/img/5.png",
           titulo: "Frituras",
           descripcion:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum, mauris vel molestie tincidunt, tellus tellus efficitur enim.",
         },
         {
           id: 2,
-          image: "/assets/img/img2.jpg",
+          image: "/assets/img/6.png",
           titulo: "Dulceria a granel",
           descripcion:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut fermentum, mauris vel molestie tincidunt, tellus tellus efficitur enim.",
         },
         {
           id: 3,
-          image: "/assets/img/img3.jpg",
+          image: "/assets/img/7.png",
           titulo: "De La Rosa",
           descripcion:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut fermentum, mauris vel molestie tincidunt, tellus tellus efficitur enim.",
         },
         {
           id: 4,
-          image: "/assets/img/img4.jpg",
+          image: "/assets/img/8.png",
           titulo: "Dulces",
           descripcion:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum, mauris vel molestie tincidunt, tellus tellus efficitur enim.",
@@ -153,6 +153,7 @@ ion-button {
   margin: 0 auto !important;
   left: 0;
   right: 0;
+  text-align: center;
 }
 ion-menu-button {
   font-size: 10rem;

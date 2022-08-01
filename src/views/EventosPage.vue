@@ -79,7 +79,7 @@ export default defineComponent({
       eventos: [
         {
           id: 1,
-          image: "/assets/img/img1.jpg",
+          image: "/assets/img/1.png",
           titulo: "Frituras",
           descripcion:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -87,7 +87,7 @@ export default defineComponent({
         },
         {
           id: 2,
-          image: "/assets/img/img2.jpg",
+          image: "/assets/img/2.png",
           titulo: "Dulceria a granel",
           descripcion:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -95,7 +95,7 @@ export default defineComponent({
         },
         {
           id: 3,
-          image: "/assets/img/img3.jpg",
+          image: "/assets/img/3.png",
           titulo: "De La Rosa",
           descripcion:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -103,7 +103,7 @@ export default defineComponent({
         },
         {
           id: 4,
-          image: "/assets/img/img4.jpg",
+          image: "/assets/img/4.png",
           titulo: "Dulces",
           descripcion:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
