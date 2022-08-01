@@ -3,13 +3,9 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '',
-    redirect: '/slide'
-  },
-  // {
-  //   path: '/folder/:id',
-  //   component: () => import ('../views/FolderPage.vue')
-  // },
+    path: '/',
+    component: () => import ('../views/InicioPage.vue')
+  }, 
   {
     path: '/slide',
     component: () => import ('../views/SlidePage.vue')
@@ -41,11 +37,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/noticias',
     component: () => import ('../views/NoticiasPage.vue')
-  },
-  {
-    path: '/inicio',
-    component: () => import ('../views/InicioPage.vue')
-  },
+  },  
 ]
 
 const router = createRouter({

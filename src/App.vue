@@ -1,36 +1,37 @@
 <template>
   <ion-app>
+    <ion-menu
+      side="start"
+      content-id="main-content"
+      color="mycolor"
+      class="ion-color-mycolor"
+    >
+      <ion-header>
+        <ion-toolbar translucent color="mycolor" class="ion-color-mycolor">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content color="mycolor" class="ion-color-mycolor">
+        <ion-list
+          color="mycolor"
+          class="ionListMenu ion-color-mycolor"
+          v-for="menu in menus"
+          :key="menu.id"
+        >
+          <ion-item :href="menu.link" color="mycolor" class="ion-color-mycolor">
+            <ion-icon :name="menu.icono" slot="start"></ion-icon>
+            <ion-label>{{ menu.nombre }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
     <ion-split-pane content-id="main-content">
-      <!-- <ion-menu content-id="main-content" type="overlay">
-        <ion-content>
-          <ion-list id="inbox-list">
-            <ion-list-header>Inbox</ion-list-header>
-            <ion-note>hi@ionicframework.com</ion-note>
-  
-            <ion-menu-toggle auto-hide="false" v-for="(p, i) in appPages" :key="i">
-              <ion-item @click="selectedIndex = i" router-direction="root" :router-link="p.url" lines="none" detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
-                <ion-icon slot="start" :ios="p.iosIcon" :md="p.mdIcon"></ion-icon>
-                <ion-label>{{ p.title }}</ion-label>
-              </ion-item>
-            </ion-menu-toggle>
-          </ion-list>
-  
-          <ion-list id="labels-list">
-            <ion-list-header>Labels</ion-list-header>
-  
-            <ion-item v-for="(label, index) in labels" lines="none" :key="index">
-              <ion-icon slot="start" :ios="bookmarkOutline" :md="bookmarkSharp"></ion-icon>
-              <ion-label>{{ label }}</ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-content>
-      </ion-menu> -->
       <ion-router-outlet id="main-content"></ion-router-outlet>
     </ion-split-pane>
   </ion-app>
 </template>
 
-<script lang="ts">
+<script >
 import { IonRouterOutlet } from "@ionic/vue";
 import { defineComponent, ref } from "vue";
 import { useRoute } from "vue-router";
@@ -56,84 +57,71 @@ export default defineComponent({
   components: {
     IonRouterOutlet,
   },
-  setup() {
-    const selectedIndex = ref(0);
-    const appPages = [
-      {
-        title: "Inbox",
-        url: "/folder/Inbox",
-        iosIcon: mailOutline,
-        mdIcon: mailSharp,
-      },
-      {
-        title: "Outbox",
-        url: "/folder/Outbox",
-        iosIcon: paperPlaneOutline,
-        mdIcon: paperPlaneSharp,
-      },
-      {
-        title: "Favorites",
-        url: "/folder/Favorites",
-        iosIcon: heartOutline,
-        mdIcon: heartSharp,
-      },
-      {
-        title: "Archived",
-        url: "/folder/Archived",
-        iosIcon: archiveOutline,
-        mdIcon: archiveSharp,
-      },
-      {
-        title: "Trash",
-        url: "/folder/Trash",
-        iosIcon: trashOutline,
-        mdIcon: trashSharp,
-      },
-      {
-        title: "Spam",
-        url: "/folder/Spam",
-        iosIcon: warningOutline,
-        mdIcon: warningSharp,
-      },
-    ];
-    const labels = [
-      "Family",
-      "Friends",
-      "Notes",
-      "Work",
-      "Travel",
-      "Reminders",
-    ];
-
-    const path = window.location.pathname.split("folder/")[1];
-    if (path !== undefined) {
-      selectedIndex.value = appPages.findIndex(
-        (page) => page.title.toLowerCase() === path.toLowerCase()
-      );
-    }
-
-    const route = useRoute();
-
+  data() {
     return {
-      selectedIndex,
-      appPages,
-      labels,
-      archiveOutline,
-      archiveSharp,
-      bookmarkOutline,
-      bookmarkSharp,
-      heartOutline,
-      heartSharp,
-      mailOutline,
-      mailSharp,
-      paperPlaneOutline,
-      paperPlaneSharp,
-      trashOutline,
-      trashSharp,
-      warningOutline,
-      warningSharp,
-      isSelected: (url: string) => (url === route.path ? "selected" : ""),
+      menus: [
+        {
+          id: 1,
+          nombre: "Inicio",
+          icono: "home",
+          link: "/",
+        },
+        {
+          id: 2,
+          nombre: "Eventos",
+          icono: "calendar",
+          link: "/eventos",
+        },
+        {
+          id: 3,
+          nombre: "Galería",
+          icono: "images",
+          link: "/galeria",
+        },
+        {
+          id: 4,
+          nombre: "Sobre nosotros",
+          icono: "heart",
+          link: "/nosotros",
+        },
+        {
+          id: 5,
+          nombre: "Noticias",
+          icono: "document-text",
+          link: "/noticias",
+        },
+        {
+          id: 6,
+          nombre: "Slide",
+          icono: "albums",
+          link: "/slide",
+        },
+        {
+          id: 7,
+          nombre: "Login",
+          icono: "log-in",
+          link: "/login",
+        },
+        {
+          id: 8,
+          nombre: "Registrarse",
+          icono: "log-in",
+          link: "/registrarse",
+        },
+        {
+          id: 9,
+          nombre: "Cambiar contraseña",
+          icono: "key",
+          link: "/cambiarpass",
+        },
+      ],
     };
+  },
+  methods: {
+    link: function (link) {
+      alert("Hola " + link + "!");
+      this.push(link);
+    },
   },
 });
 </script>
@@ -257,5 +245,10 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+.ionListMenu {
+  padding: 8px 0 0 0 !important;
+  background: #fdffb6 !important;
 }
 </style>

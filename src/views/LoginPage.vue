@@ -1,8 +1,11 @@
 <template>
   <ion-page>
     <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-title>Login</ion-title>
+      <ion-toolbar color="mycolor">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <h1>LOGIN</h1>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true" color="mycolor" class="ion-color-mycolor">
@@ -36,8 +39,8 @@
             size="10"
             style="text-align: center; margin: 0 auto 10px auto"
           >
-            <ion-button color="primary" style="border-radius: 3px">
-              <span style="color: #fff">
+            <ion-button class="buttonEntrar">
+              <span class="spanButton">
                 <ion-icon
                   style="transform: rotate(-34.84deg)"
                   size="small"
@@ -50,12 +53,14 @@
         </ion-row>
         <ion-row>
           <ion-col size="12" style="text-align: center">
-            <a href="/cambiarpass" style="text-decoration: none"
+            <a
+              href="/cambiarpass"
+              style="text-decoration: none; font-size: 20px"
               >¿Olvidaste tu contraseña?</a
             >
           </ion-col>
           <ion-col size="12" style="text-align: center">
-            <a href="/registrarse">Crear cuenta</a>
+            <a href="/registrarse" style="font-size: 20px">Crear cuenta</a>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -69,7 +74,6 @@ import {
   IonPage,
   IonHeader,
   IonToolbar,
-  IonTitle,
   IonContent,
   IonGrid,
   IonRow,
@@ -79,14 +83,12 @@ import {
   IonIcon,
 } from "@ionic/vue";
 import { defineComponent } from "vue";
-
 export default defineComponent({
   name: "LoginPage",
   components: {
     IonPage,
     IonHeader,
     IonToolbar,
-    IonTitle,
     IonContent,
     IonGrid,
     IonRow,
@@ -99,8 +101,27 @@ export default defineComponent({
 </script>
 
 <style>
-:root {
-  --ion-safe-area-top: 20px;
-  --ion-safe-area-bottom: 22px;
+h1 {
+  color: #215dbe !important;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 15px;
+  margin-left: -2.5rem;
+  text-align: center;
+}
+ion-menu-button {
+  font-size: 10rem;
+}
+
+.buttonEntrar {
+  --background: #ff5685 !important;
+  --color: #ffffff !important;
+  --border-radius: 3px;
+  font-size: 20px;
+}
+
+.spanButton {
+  font-weight: bold;
+  padding: 0px !important;
 }
 </style>
