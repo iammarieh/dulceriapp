@@ -96,7 +96,7 @@ http://ionicframework.com/docs/theming/ */
   --border-color: transparent;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: mycolor) {
   /*
    * Dark Colors
    * -------------------------------------------

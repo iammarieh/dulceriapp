@@ -20,7 +20,9 @@
         </div>
         <ion-row style="margin-top: 3rem">
           <ion-col size="12" style="margin: auto">
-            <ion-item style="border-radius: 5px; border: 1px solid #000">
+            <ion-item
+              style="border-radius: 5px; border: 1px solid #000; height: 55px"
+            >
               <ion-label position="floating">Correo</ion-label>
               <ion-input type="email"></ion-input>
             </ion-item>
@@ -28,7 +30,9 @@
         </ion-row>
         <ion-row>
           <ion-col size="12" style="margin: auto">
-            <ion-item style="border-radius: 5px; border: 1px solid #000">
+            <ion-item
+              style="border-radius: 5px; border: 1px solid #000; height: 55px"
+            >
               <ion-label position="floating">Contraseña</ion-label>
               <ion-input type="password"></ion-input>
             </ion-item>
@@ -117,7 +121,7 @@ ion-menu-button {
   --background: #ff5685 !important;
   --color: #ffffff !important;
   --border-radius: 3px;
-  font-size: 20px;
+  /* font-size: 15px; */
 }
 
 .spanButton {

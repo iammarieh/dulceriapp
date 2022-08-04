@@ -110,7 +110,7 @@ ion-menu-button {
   --background: #ff5685 !important;
   --color: #ffffff !important;
   --border-radius: 3px;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 
 .spanButton {

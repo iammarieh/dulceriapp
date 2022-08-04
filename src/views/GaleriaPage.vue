@@ -148,9 +148,8 @@ ion-button {
 }
 .botones {
   position: absolute;
-  bottom: 0;
   width: 90%;
-  margin: 0 auto !important;
+  margin: 1rem auto 0 auto !important;
   left: 0;
   right: 0;
   text-align: center;
@@ -158,4 +157,7 @@ ion-button {
 ion-menu-button {
   font-size: 10rem;
 }
+/* .container {
+ position: relative;
+} */
 </style>
