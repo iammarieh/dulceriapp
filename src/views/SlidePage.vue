@@ -1,34 +1,26 @@
 <template>
   <div class="container">
     <ion-app>
+      <ion-header :translucent="true">
+        <ion-toolbar color="mycolor">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <h1>SLIDE</h1>
+        </ion-toolbar>
+      </ion-header>
       <ion-content :fullscreen="true" color="mycolor" class="ion-color-mycolor">
-        <div class="conteiner_info">
-          <div>
-            <h1>SLIDE</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Recusandae ex accusamus dolorem quo, quod ipsum veniam sit
-              deserunt quaerat fugit quam atque perferendis fuga natus incidunt
-              labore iste obcaecati ullam.
-            </p>
-          </div>
-        </div>
-        <div class="contenedor_slides">
-          <ion-slides :pager="true" :options="slideOpts">
-            <ion-slide>
-              <img src="../../public/assets/img/slide-1.png" />
-            </ion-slide>
-            <ion-slide>
-              <img src="../../public/assets/img/slide-2.png" />
-            </ion-slide>
-            <ion-slide>
-              <img src="../../public/assets/img/slide-3.png" />
-            </ion-slide>
-            <ion-slide>
-              <img src="../../public/assets/img/slide-4.png" />
-            </ion-slide>
-          </ion-slides>
-        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ex
+          accusamus dolorem quo, quod ipsum veniam sit deserunt quaerat fugit
+          quam atque perferendis fuga natus incidunt labore iste obcaecati
+          ullam.
+        </p>
+        <ion-slides :pager="true" :options="slideOpts">
+          <ion-slide v-for="img in imgs" :key="img.id">
+            <img :src="'/assets/img/' + img.id + '.png'" />
+          </ion-slide>
+        </ion-slides>
       </ion-content>
     </ion-app>
   </div>
@@ -50,49 +42,44 @@ export default defineComponent({
     };
     return { slideOpts };
   },
+  data() {
+    return {
+      imgs: [
+        { id: 1 },
+        { id: 2 },
+        { id: 3 },
+        { id: 4 },
+        { id: 5 },
+        { id: 6 },
+        { id: 7 },
+        { id: 8 },
+      ],
+    };
+  },
 });
 </script>
 
 <style>
-.container {
-  background-color: #fdffb6 !important;
-  height: 100vh;
-}
-.conteiner_info {
-  background-color: #fdffb6 !important;
-  color: #000;
-}
-.conteiner_info div {
-  padding-top: 4rem;
-}
 ion-slides {
   margin: 0 2rem;
   width: 90%;
 }
-.contenedor_slides {
-  background-color: #fdffb6 !important;
-  margin-top: -25px;
-  padding-bottom: 10rem;
-}
-.slide img {
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
 
 h1 {
-  text-align: center;
-  color: #215dbe;
-  font-size: 28px;
+  color: #215dbe !important;
+  font-size: 25px;
   font-weight: bold;
+  margin: 15px;
+  margin-left: -2.5rem;
+  text-align: center;
+}
+ion-menu-button {
+  font-size: 10rem;
 }
 
 p {
   font-size: 20px;
   padding: 2rem 2rem 5rem 2rem;
   text-align: justify;
-}
-ion-app:host {
-  background: #fdffb6 !important;
 }
 </style>
